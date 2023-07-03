@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: url(../images/Registration.webp) center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+td{
+    vertical-align: middle;
+}
+main .table{
+    width: 82vw;
+    height: 90vh;
+    background-color: #ebebed;
+    backdrop-filter: blur(7px);
+    box-shadow: 0 .4rem .8rem #0005;
+    border-radius: .8rem;
+    overflow: hidden;
+}
+
+.table__header{
+ width: 100%;
+ height: 10%;
+ background-color: #fff4;
+ padding: .8rem 1rem;
+}
+
+.table__body{
+    width: 95%;
+    max-height: calc(89% - 1.6rem);
+    background-color: #fffb;
+    margin: .8rem auto;
+    border-radius: .6rem;
+    overflow: auto;
+}
+
+.table__body::-webkit-scrollbar{
+    width: 0.5rem;
+    height: 0.5rem;
+}
+
+.table__body::-webkit-scrollbar-thumb{
+    border-radius: .5rem;
+    background-color: #0004;
+    visibility: hidden;
+}
+
+.table__body:hover::-webkit-scrollbar-thumb{
+    visibility: visible;
+}
+
+table{
+    width: 100%;
+}
+
+table, th, td{
+    border-collapse: collapse;
+    padding: 1rem;
+}
+
+thead th{
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: #d5d1defe;
+}
+
+tbody tr:nth-child(even){
+    background-color: #0000000b;
+}
+
+tbody tr:hover{
+    background-color: #c18183;
+}
+
+
+.btn_box{
+    width: 100%;
+    margin: 30px auto;
+    text-align: center;
+}
+button{
+    width: 110px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 0 10px;
+    background: linear-gradient(to right, #c18183, #b60023);
+    color: white;
+    border: 0;
+    outline: none;
+    cursor: pointer;
+}
+

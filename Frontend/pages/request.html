@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script>
+    $(function () {
+      $("#standardFilter").load("../components/standardFilter.html");
+    });
+  </script>
+  <script>
+    $(function () {
+      $("#ratedFilter").load("../components/rateFilter.html");
+    });
+  </script>
+  <script src="https://kit.fontawesome.com/2dd8fb4b0b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="../css/notification.css">
+  <link rel="stylesheet" href="../css/request.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <title>Waslni - Request Order</title>
+  <link rel="icon" href="../images/requestOrder/items.png" type="image/x-icon">
+  <style>
+    body {
+      background-image: url('../images/requestOrder/background.webp');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div>
+    <nav class="navbar navbar-expand-lg ">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="../pages/HomePage.html"><img src="../images/WaslniLogo.png" alt="Logo" width="30"
+            height="30" class="d-inline-block align-text-top"> Waslni</a>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../pages/home.html">Home Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../pages/request.html">New Order</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../pages/showmyorder.html">Show My Order</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="../pages/HomePage.html">Log Out</a>
+            </li>
+
+          </ul>
+        </div>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+          aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </nav>
+  </div>
+  <div class="titell">
+    <label class="make_your_order">MAKE YOUR ORDER</label>
+  </div>
+  <form onsubmit="handleOrderRequest(); return false;">
+
+    <div class="oval">
+      <div>
+        <label class="company"> Available Company</label>
+      </div>
+      <div class="container priceFilterTable" style="height: 380px; overflow: auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Company Name</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="priceFilterTable">
+
+          </tbody>
+        </table>
+      </div>
+      <div class="container extraServiceFilterTable" style="height: 380px; overflow: auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Company Name</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Time expected</th>
+              <th scope="col">Standard price</th>
+              <th scope="col">Price With {Fast/Village} delivery</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="extraServiceFilterTable">
+
+          </tbody>
+        </table>
+      </div>
+      <div class="container rateFilterTable" style="height: 380px; overflow: auto">
+        <table class="table">
+          <thead>
+            <tr>
+              <th scope="col">Company Name</th>
+              <th scope="col">From</th>
+              <th scope="col">To</th>
+              <th scope="col">Rate</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody class="table-group-divider" id="rateFilterTable">
+
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <button type="submit" class="shows">Request</button>
+        <div id="standardFilter" class="container filter"></div>
+      </div>
+    </div>
+    <div class="box">
+      <div class="start" width="50%">
+        <img src="../images/requestOrder/3.png" style="float :left ">
+        <label id="satrtpoint" class="startPt">Start Point</label>
+        <select class="list" id="start-city">
+          <option value="Nablus">Nablus</option>
+          <option value="Jenin">Jenin</option>
+          <option value="Ramallah">Ramallah</option>
+          <option value="Tulkarem">Tulkarem</option>
+          <option value="Qulquilia">Qulquilia</option>
+        </select>
+      </div>
+
+      <div class="end">
+        <img src="../images/requestOrder/3.png" style="float: left;">
+        <label id="endpoint" class="endPt">End Point </label>
+        <select class="list" id="end-city">
+          <option value="Ramallah">Ramallah</option>
+          <option value="Nablus">Nablus</option>
+          <option value="Jenin">Jenin</option>
+          <option value="Tulkarem">Tulkarem</option>
+          <option value="Qulquilia">Qulquilia</option>
+        </select>
+
+
+      </div>
+      <div class="textField">
+        <input type="text" class="lname" name="lname" placeholder="Street" id="packageStreet" required>
+      </div>
+      <div class="textField">
+        <input type="text" class="lname" name="lname" placeholder="Postal Code" id="packagePostal" required>
+      </div>
+      <div class="textField">
+        <input type="text" class="lname" name="lname" placeholder="Size of your package" id="packageSize" required>
+      </div>
+      <div class="textField">
+        <textarea id="packageDiscription" style="height: 100px;" class="lname" name="lname"
+          placeholder="Description of your package.."></textarea>
+      </div>
+
+      <div class="time">
+
+        <label>The date of the request</label>
+
+        <input type="date" class="clender" name="birthday" id="packageDate" required>
+
+      </div>
+      <div class="btnn">
+        <button type="button" class="butn" onclick="showDefaultTable()">Show Available Company</button>
+        <div id="ratedFilter" class="container filter ratedFilter"></div>
+      </div>
+    </div>
+  </form>
+
+  <div class="containerrrr">
+    <div class="popup" id="popup">
+      <img src="../images/tick1.webp">
+      <h2>Thank you!</h2>
+      <p>Your order is successfully recorded.</p>
+      <p>The delivery company will contact you soon...</p>
+      <button type="button" onclick="closePopup()">OK</button>
+    </div>
+  </div>
+  <script>
+    let popup = document.getElementById("popup");
+    function openPopup() {
+      popup.classList.add("open-popup");
+    }
+    function closePopup() {
+      popup.classList.remove("open-popup");
+      location.reload();
+    }
+  </script>
+
+
+  <script src="../javascript/filters/filter.js"></script>
+  <script src="../javascript/filters/filter_Integration.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,169 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+  .logo{
+    position: absolute ;
+    right: 190px;
+    top:80px;
+    color:#d1d1d3;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+  }
+  .NewOrder{
+    background-color:#d1d1d3;
+    size: 200px;
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    position:absolute;
+    top: 200px;
+    right: 150px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid  rgb(156, 12, 12);
+    color:rgb(156, 12, 12);
+    cursor: pointer;
+  }
+  
+
+  .ShowMyOrder{
+    background-color:#d1d1d3;
+    size: 100px;
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+    position:absolute;
+    top: 300px;
+    right: 110px;
+    border-radius: 15px;
+    text-align: center;
+    border: 3px solid  rgb(156, 12, 12);
+    color:rgb(156, 12, 12);
+    cursor: pointer;
+  }
+  .motor{
+    position:absolute;
+    width: 100px;
+    height: 100px;
+    top: 650px;
+    right: 230px;
+  }
+  .Search{
+    background-color: #eeeef1;
+    height: 50px;
+    width:700px;
+    position: absolute;
+    top: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: rgb(156, 12, 12);
+    
+  }
+.best{
+  font-family: 'Courgette', cursive;
+    font-size: 40px;
+    color: rgb(156, 12, 12);
+    position: absolute;
+    top: 140px;
+    left:200px;
+
+}
+
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 330px;
+  position: relative;
+  margin: auto;
+  margin-left:150px ;
+  margin-top: 200px;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  margin-left: 50px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+ left: 235px;
+  border-radius: 3px 0 0 3px;
+}
+.prev {
+  left: -80px;
+  border-radius: 3px 0 0 3px;
+}
+
+
+.prev:hover, .next:hover {
+  background-color: rgba(125, 38, 38, 0.8);
+}
+
+
+
+
+/* The dots/bullets/indicators */
+.dot {
+
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin-left: 10px;
+  background-color: #564141;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+.dotdot{
+    position: absolute;
+    left:230px;
+}
+
+.active, .dot:hover {
+  background-color: #ab0b0b;
+}
+
+.oval{
+  border:3px solid rgb(74, 66, 66);
+    height: 350px;
+    width: 560px;
+    background-color: #d1d1d3;
+    border-radius: 7px;
+    text-align: center;
+    position: absolute ;
+    right:420px;
+    top:200px;
+}
+.company{
+  font-family: 'Courgette', cursive;
+  font-size: 40px;
+  color: rgb(156, 12, 12);
+  position: absolute;
+  top: 140px;
+  right:550px;
+}
+.table{
+  color: rgb(156, 12, 12);
+
+}
+#p1 { text-indent: 20px;
+}
+
+
+ 
+   
+ 
+
+ 
+
+  

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <title>Sign in</title>
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+
+    <script>
+
+        async function getcompanybyid() {
+
+
+            let bodydata = {
+                "email": email,
+                "password": password,
+            }
+            await fetch('https://waslni.azurewebsites.net/getidforcompany', {
+                method: 'POST',
+                cache: 'no-cache',
+
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bodydata),
+            })
+                .then(res => res[0].json())
+                .then(response => console.log('Success: ', response))
+                .catch(error => alert(error));
+
+
+        }
+
+        async function Companylogin() {
+
+            let email = document.getElementById('exampleInputEmail1').value;
+            let password = document.getElementById('exampleInputPassword1').value;
+            let bodydata = {
+                "email": email,
+                "password": password,
+            }
+            await fetch('https://waslni.azurewebsites.net/Companylogin', {
+                method: 'POST',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bodydata),
+            })
+                .then(res => {
+                    console.log(res.status)
+                    if (res.status == 401) {
+                        alert('Password or Email empty')
+                        return;
+
+                    }
+                    else if (res.status == 200) {
+
+                        let name = localStorage.setItem("storageName", "home.html")
+                        window.location.replace("/Frontend/pages/companyHomePage.html");
+                        return;
+
+                    }
+                    else if (res.status == 400) {
+                        return;
+                    }
+                }
+                )
+                .catch(Error => {
+                    console.log(Error)
+                })
+            return
+        }
+
+        async function Clientlogin() {
+            event.preventDefault()
+            let email = document.getElementById('exampleInputEmail1').value;
+            let password = document.getElementById('exampleInputPassword1').value;
+            let bodydata = {
+                "email": email,
+                "password": password,
+            }
+            await fetch('https://waslni.azurewebsites.net/Login_User', {
+                method: 'POST',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(bodydata),
+            })
+                .then(res => {
+                    console.log(res.status)
+
+
+                    if (res.status == 401) {
+                        alert('Password or Email empty')
+
+                    }
+                    else if (res.status == 200) {
+                        window.location.replace("/Frontend/pages/home.html");
+                    }
+                    else if (res.status == 400) {
+                        Companylogin();
+                        return;
+                    }
+                }
+                )
+                .catch(Error => {
+                    console.log(Error)
+                })
+        }
+    </script>
+</head>
+
+<body>
+    <div class="SignMainBackground">
+        <form class="container SignContainer">
+            <div class="mb-4 SignHeaderContainer">
+                <h1>Sign in to Waslni</h1>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control SignInput" id="exampleInputEmail1" aria-describedby="emailHelp">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" class="form-control SignInput" id="exampleInputPassword1">
+            </div>
+            <div class="mb-3">
+                <div style="padding-bottom: 5px;">Don't have account ?</div>
+                <a href="signup.html" class="SignLink">Create new Customer account</a><br>
+                <a href="#" class="SignLink" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Create new
+                    Company account</a>
+            </div>
+            <button style="margin-bottom: 15px;" type="submit" onclick="Clientlogin()"
+                class="btn btn-light SignButton">Log
+                In</button>
+            <a href="HomePage.html" class="SignLink">Or, Return to Home Page</a>
+        </form>
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="exampleModalLabel" style="margin-right: auto; margin-left: auto;">
+                        Company registration conditions
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <p>You must be a delivery company, that works in the state of Palestine</p>
+                        <p>You must serve the customers to deliver their products</p>
+                        <p>You're going to create new Delivery Company Account, if you're confirming this, click on
+                            confirm button</p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                        style="margin-right: auto;">Cancel</button>
+                    <a href="registerCompany.html"><button type="button" class="btn btn-success" data-bs-dismiss="modal"
+                            style="margin-left: auto;">Confirm</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

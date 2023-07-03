@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Waslni - Registration</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/Registration.css">
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container" id="data">
+
+        <form id="form1" action="table.html">
+            <h3>Work place cities</h3>
+            <input type="checkbox" id="Nablus" name="city1" value="Nablus">
+            <label for="city1">Nablus</label><br>
+            <input type="checkbox" id="Ramallah" name="city2" value="Ramallah">
+            <label for="city2">Ramallah</label><br>
+            <input type="checkbox" id="Tulkarem" name="city3" value="Tulkarem">
+            <label for="city3">Tulkarem</label><br>
+            <input type="checkbox" id="Qulquilia" name="city4" value="Qulquilia">
+            <label for="city4">Qulquilia</label><br>
+            <input type="checkbox" id="Jenin" name="city5" value="Jenin">
+            <label for="city5">Jenin</label><br>
+
+            <div class="btn_box">
+                <button type="button" id="next1">Next</button>
+            </div>
+        </form>
+
+        <form id="form2" action="table.html">
+            <h3>Count and size of the company's vehicles</h3>
+            <div class="small">
+                <label>Small Vehicles</label>
+                <input type="number" placeholder="Count" id="Snum">
+                <input type="text" placeholder="description" id="SD">
+            </div>
+            <div class="medium">
+                <label>Medium Vehicles</label>
+                <input type="number" placeholder="Count" id="Mnum">
+                <input type="text" placeholder="description" id="MD">
+            </div>
+            <div class="large">
+                <label>Large Vehicles</label>
+                <input type="number" placeholder="Count" id="Lnum">
+                <input type="text" placeholder="description" id="LD">
+            </div>
+
+            <div class="btn_box">
+                <button type="button" id="back1">Back</button>
+                <button type="button" id="next2">Next</button>
+            </div>
+        </form>
+        <form id="form3" action="table.html">
+            <h3>Do you deliver to villages?</h3>
+            <div class="radio">
+                <input type="radio" id="yesOption1" name="Option1" value="yes" checked="checked">
+                <label for="yes">yes</label>
+                <input type="radio" id="noOption1" name="Option1" value="no">
+                <label for="no">no</label><br>
+            </div>
+
+            <h3>Do you have express delivery?</h3>
+            <div class="radio1">
+
+                <input type="radio" id="yesOption2" name="Option2" value="yes" checked="checked">
+                <label for="yes">yes</label>
+                <input type="radio" id="noOption2" name="Option2" value="no">
+                <label for="no">no</label><br>
+            </div>
+
+            <div class="btn_box">
+                <button type="button" id="back2">Back</button>
+                <button type="submit">Next</button>
+            </div>
+        </form>
+
+        <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small>Step 1</small></div>
+            <div class="step-col"><small>Step 2</small></div>
+            <div class="step-col"><small>Step 3</small></div>
+        </div>
+
+    </div>
+
+    <script>
+        var form1 = document.getElementById('form1');
+        var form2 = document.getElementById('form2');
+        var form3 = document.getElementById('form3');
+
+        var next1 = document.getElementById('next1');
+        var next2 = document.getElementById('next2');
+
+        var back1 = document.getElementById('back1');
+        var back2 = document.getElementById('back2');
+
+        var progress = document.getElementById('progress');
+        next1.onclick = function () {
+            form1.style.left = "-450px";
+            form2.style.left = "40px";
+            progress.style.width = "254px";
+        }
+        back1.onclick = function () {
+            form1.style.left = "40px";
+            form2.style.left = "450px";
+            progress.style.width = "127px";
+        }
+        next2.onclick = function () {
+            form2.style.left = "-450px";
+            form3.style.left = "40px";
+            progress.style.width = "381px";
+        }
+        back2.onclick = function () {
+            form2.style.left = "40px";
+            form3.style.left = "450px";
+            progress.style.width = "254px";
+        }
+
+        const data = document.getElementById('data');
+        console.log(JSON.parse(localStorage.getItem('')));
+
+        data.addEventListener('submit', function (e) {
+            e.preventDefault();
+            var NablusValue = document.getElementById('Nablus').value;
+            var RamallahValue = document.getElementById('Ramallah').value;
+            var TulkaremValue = document.getElementById('Tulkarem').value;
+            var JeninValue = document.getElementById('Jenin').value;
+            var QulquiliaValue = document.getElementById('Qulquilia').value;
+            var SnumValue = +document.getElementById('Snum').value;
+            var MnumValue = +document.getElementById('Mnum').value;
+            var LnumValue = +document.getElementById('Lnum').value;
+            var SDValue = document.getElementById('SD').value;
+            var MDValue = document.getElementById('MD').value;
+            var LDValue = document.getElementById('LD').value;
+            var option1Value = document.querySelector('input[name="Option1"]:checked').value;
+            var option2Value = document.querySelector('input[name="Option2"]:checked').value;
+
+            function getCheckboxValue() {
+                let cities = [];
+                var l1 = document.getElementById("Nablus");
+                var l2 = document.getElementById("Ramallah");
+                var l3 = document.getElementById("Tulkarem");
+                var l4 = document.getElementById("Jenin");
+                var l5 = document.getElementById("Qulquilia");
+
+                if (l1.checked == true) {
+                    localStorage.setItem('NablusValue', NablusValue);
+                    cities.push(NablusValue);
+                }
+                if (l2.checked == true) {
+                    localStorage.setItem('RamallahValue', RamallahValue);
+                    cities.push(RamallahValue);
+                }
+                if (l3.checked == true) {
+                    localStorage.setItem('TulkaremValue', TulkaremValue);
+                    cities.push(TulkaremValue);
+                }
+                if (l4.checked == true) {
+                    localStorage.setItem('JeninValue', JeninValue);
+                    cities.push(JeninValue);
+                }
+                if (l5.checked == true) {
+                    localStorage.setItem('QulquiliaValue', QulquiliaValue);
+                    cities.push(QulquiliaValue);
+                }
+                return cities;
+            }
+            cities = getCheckboxValue();
+            console.log(cities);
+            // localStorage.clear();
+            localStorage.setItem('cities', cities);
+            localStorage.setItem('SnumValue', SnumValue);
+            localStorage.setItem('MnumValue', MnumValue);
+            localStorage.setItem('LnumValue', LnumValue);
+            localStorage.setItem('SDValue', SDValue);
+            localStorage.setItem('MDValue', MDValue);
+            localStorage.setItem('LDValue', LDValue);
+            localStorage.setItem('option1Value', option1Value);
+            localStorage.setItem('option2Value', option2Value);
+            location.href = "table.html";
+            return false;
+        })
+
+    </script>
+</body>
+
+</html>

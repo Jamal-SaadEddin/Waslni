@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2dd8fb4b0b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Order Informations</title>
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="exampleModalLabel" style="margin-right: auto; margin-left: auto;">
+                        <i class="fa-solid fa-receipt"></i>
+                        Order Informations
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="order-client-name" class="col-form-label" data-bs-target="#exampleModalToggle2"
+                            data-bs-toggle="modal" style="cursor: pointer;"><i class="fa-solid fa-user-tie"></i> Client
+                            Name: (click to show more about
+                            Client <i class="fa-solid fa-hand-pointer"></i>) <i
+                                class="fa-solid fa-caret-down fa-sm"></i></label>
+                        <input type="text" class="form-control" id="order-client-name" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-id" class="col-form-label"><i class="fa-solid fa-barcode"></i> Order
+                            ID:</label>
+                        <input type="text" class="form-control" id="order-id" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-status" class="col-form-label dropdown-toggle" data-bs-toggle="dropdown"
+                            aria-expanded="false" style="cursor: pointer;"><i class="fa-solid fa-spinner"></i> Order
+                            Status: (click to
+                            change <i class="fa-solid fa-hand-pointer"></i>)</label>
+                        <ul class="dropdown-menu dropdown-menu-end">
+                            <li onclick="setPending()"><button class="dropdown-item" type="button">Pending <i
+                                        class="fa-regular fa-bell fa-shake"></i></button></li>
+                            <li onclick="setInProgress()"><button class="dropdown-item" type="button">In progress <i
+                                        class="fa-solid fa-circle-half-stroke fa-spin"></i></button></li>
+                            <li onclick="setDelivered()"><button class="dropdown-item" type="button">Delivered <i
+                                        class="fa-solid fa-check"></i></button></li>
+                        </ul>
+                        <input type="text" class="form-control" id="order-status" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-price" class="col-form-label"><i class="fa-solid fa-sack-dollar"></i> Order
+                            Price:</label>
+                        <input type="text" class="form-control" id="order-price" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-start-point" class="col-form-label"><i
+                                class="fa-solid fa-plane-departure"></i> Order Start Point:</label>
+                        <input type="text" class="form-control" id="order-start-point" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-end-point" class="col-form-label"><i class="fa-solid fa-plane-arrival"></i>
+                            Order End Point:</label>
+                        <input type="text" class="form-control" id="order-end-point" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-size" class="col-form-label"><i class="fa-solid fa-cube"></i> Order
+                            Size:</label>
+                        <input type="text" class="form-control" id="order-size" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-street" class="col-form-label"><i class="fa-solid fa-road"></i> Order
+                            Street:</label>
+                        <input type="text" class="form-control" id="order-street" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-request-date" class="col-form-label"><i
+                                class="fa-regular fa-calendar-plus"></i> Order Request Date:</label>
+                        <input type="text" class="form-control" id="order-request-date" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-postal-code" class="col-form-label"><i class="fa-solid fa-signs-post"></i>
+                            Order Postal Code:</label>
+                        <input type="text" class="form-control" id="order-postal-code" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="order-description" class="col-form-label"><i class="fa-solid fa-quote-right"></i>
+                            Order Description:</label>
+                        <textarea class="form-control" id="order-description" disabled></textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" onclick="declineOrder()" data-bs-dismiss="modal"
+                        style="margin-right: auto;">Decline
+                        Order</button>
+                    <button type="button" class="btn btn-success" data-bs-dismiss="modal">Confirm Order</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="exampleModalToggleLabel2"
+                        style="margin-right: auto; margin-left: auto;"><i class="fa-solid fa-address-card"></i>
+                        Client information</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="client-name" class="col-form-label"><i class="fa-solid fa-signature"></i> Client
+                            Name:</label>
+                        <input type="text" class="form-control" id="client-name" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="client-phone-number" class="col-form-label"><i class="fa-solid fa-phone"></i> Client
+                            Phone Number:</label>
+                        <input type="text" class="form-control" id="client-phone-number" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="client-email-address" class="col-form-label"><i class="fa-solid fa-at"></i> Client
+                            Email Address:</label>
+                        <input type="text" class="form-control" id="client-email-address" disabled>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back
+                        to
+                        order details</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button class="btn btn-danger" onclick="showOrder()" data-bs-target="#exampleModalToggle"
+        data-bs-toggle="modal">Show Order
+        details</button>
+
+    <script src="../javascript/orderPageInfo/orderPageInfo.js"></script>
+    <script src="../javascript/orderPageInfo/orderPageInfo_Integration.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<body>
+    <button class="btn filter-btn" type="button" data-bs-toggle="collapse" data-bs-target="#defaultFilter"
+        aria-expanded="false" aria-controls="defaultFilter">
+        Filter table by <i class="fa-solid fa-caret-down fa-beat-fade"></i>
+    </button>
+    <div class="collapse filter-list" id="defaultFilter">
+        <div class="card card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cursor-pointer" onclick="filterLowPrice()">Lowest price</li>
+                <li class="list-group-item cursor-pointer" onclick="filterHighPrice()">Highest price</li>
+                <li class="list-group-item cursor-pointer" onclick="filterFastCompanies()">Fast deliveries</li>
+                <li class="list-group-item cursor-pointer" onclick="filterVillage()">Village delivery</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <link rel="stylesheet" href="../css/rating.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <title>Rate Pop-ups</title>
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="modal fade" id="helpUsRate" aria-hidden="true" aria-labelledby="HelpRateDeliveryService" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="HelpRateDeliveryService"
+                        style="margin-right: auto; margin-left: auto;">Feedback</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    Can you please help us rate the delivery service?
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-danger" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-right: auto;">No thanks</button>
+                    <button class="btn btn-warning" data-bs-target="#security" data-bs-toggle="modal">Yes,
+                        Let's go!</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade rate" id="security" aria-hidden="true" aria-labelledby="securityRate" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header security">
+                    <h1 class="modal-title fs-3" id="securityRate" style="margin-right: auto; margin-left: auto;">
+                        Security</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Did you receive the package opened or is it officially
+                        closed and sealed?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" onclick="setDeliverySecurity()" data-bs-target="#safety"
+                        data-bs-toggle="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade rate" id="safety" aria-hidden="true" aria-labelledby="safetyRate" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header safety">
+                    <h1 class="modal-title fs-3" id="safetyRate" style="margin-right: auto; margin-left: auto;">
+                        Safety</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Did you receive the package damaged or in good condition as expected?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" onclick="setDeliverySafety()" data-bs-target="#time"
+                        data-bs-toggle="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade rate" id="time" aria-hidden="true" aria-labelledby="timeRate" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header time">
+                    <h1 class="modal-title fs-3" id="timeRate" style="margin-right: auto; margin-left: auto;">
+                        Time</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Did the package arrive on time, later, or faster than expected?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" onclick="setDeliveryTime()" data-bs-target="#deliveryPrice"
+                        data-bs-toggle="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade rate" id="deliveryPrice" aria-hidden="true" aria-labelledby="deliveryPriceRate"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header price">
+                    <h1 class="modal-title fs-3" id="deliveryPriceRate" style="margin-right: auto; margin-left: auto;">
+                        Delivery Price</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <p>Was the delivery price good and consistent with the estimated time, product size, and delivery
+                        distance?</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-warning" onclick="setDeliveryPrice()" data-bs-target="#thanksForRatingWindow"
+                        data-bs-toggle="modal">Next</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade btnnn" id="thanksForRatingWindow" aria-hidden="true"
+        aria-labelledby="thanksForRatingWindowLabel" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="thanksForRatingWindowLabel"
+                        style="margin-right: auto; margin-left: auto;">
+                        Thank You For Your Feedback</h1>
+                </div>
+                <div class="modal-body">
+                    <p>Thank you for rating our services, we will always work to provide you with the best delivery
+                        services.</p>
+                    <p>Regards,</p>
+                    <p>Waslni Team</p>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-danger" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-right: auto; margin-left: auto;">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="btn btn-primary" data-bs-target="#helpUsRate" data-bs-toggle="modal">Rate Us</button>
+
+    <script src="../javascript/rating/ratingComponentPlacement.js"></script>
+    <script src="../javascript/rating/rating.js"></script>
+    <script src="../javascript/rating/rating_Integration.js"></script>
+</body>
+
+</html>

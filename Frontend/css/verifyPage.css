@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+.main {
+    height: 100%;
+    background-image: url(../images/verify.webp);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.verifyContainer {
+    width: 35%;
+    padding: 3%;
+    padding-top: 2%;
+    position: relative;
+    top: 30%;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    box-shadow: 0px 0px 30px 5px;
+    color: aliceblue;
+}
+.verifyHeaderContainer {
+    text-align: center;
+    font-family: 'Courgette', cursive;
+}
+.signupRegisterLink>a {
+    color: aliceblue;
+    text-decoration: none;
+}
+.VerifyButton {
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: larger;
+}
+.VerifyButton:hover {
+    background-color: brown;
+    color: aliceblue;
+    font-weight: bolder;
+}
+.VerifyButton:focus {
+    box-shadow: 0 0 0 2px #D3D3D3;
+    border-color: brown;
+    outline-width: 0px;
+}
+

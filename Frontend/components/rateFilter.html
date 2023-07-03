@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<body>
+    <button class="btn filter-btn" type="button" data-bs-toggle="collapse" data-bs-target="#rateFilter"
+        aria-expanded="false" aria-controls="rateFilter">
+        Show best companies acoording to <i class="fa-solid fa-caret-down fa-beat-fade"></i>
+    </button>
+    <div class="collapse filter-list" id="rateFilter">
+        <div class="card card-body">
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item cursor-pointer" onclick="rateSecurityFilter()">Security</li>
+                <li class="list-group-item cursor-pointer" onclick="rateSafetyFilter()">Safety</li>
+                <li class="list-group-item cursor-pointer" onclick="ratePriceFilter()">Delivery Price</li>
+                <li class="list-group-item cursor-pointer" onclick="rateTimeFilter()">Time for deliver</li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>

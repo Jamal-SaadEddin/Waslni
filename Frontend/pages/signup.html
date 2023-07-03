@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="../../Frontend/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="../../Frontend/css/signup.css">
+    <title>Waslni - signup</title>
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+    <script>
+        async function EmailSend(email, ssn) {
+            let EmailData = {
+                Email: email,
+                Ssn: ssn
+            }
+            await fetch('https://waslni.azurewebsites.net/confirm', {
+                method: 'POST',
+                cache: 'no-cache',
+
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Content-Length': '<calculated when request is sent>'
+                },
+                body: JSON.stringify(EmailData),
+            })
+                .then(res => {
+                    alert('email send successfly')
+                    window.location.replace("/Frontend/pages/verifyPage.html");
+                })
+
+
+        }
+        function sign_up() {
+
+
+            event.preventDefault();
+            var gender = ''
+            var gender_selected = document.getElementsByName('gender');
+            for (i = 0; i < gender_selected.length; i++) {
+                if (gender_selected[i].checked)
+                    gender += gender_selected[i].value;
+            }
+            let email = document.getElementById('email').value;
+            let name = document.getElementById('name').value;
+            let password = document.getElementById('password').value;
+            let phonenumber = document.getElementById('phonenumber').value;
+            let ssn = document.getElementById('ssn').value;
+            let address = document.getElementById('address').value;
+
+            localStorage.setItem("email", email);
+            localStorage.setItem("ssn", ssn);
+
+
+            let url = 'https://waslni.azurewebsites.net/Sign_Up_User';
+            let newUserData = {
+                email: email,
+                name: name,
+                gender: gender,
+                password: password,
+                address: address,
+                phone_number: phonenumber,
+                city: " ",
+                SSN: ssn
+            }
+
+            fetch(url, {
+                method: 'POST',
+                cache: 'no-cache',
+                credentials: 'same-origin',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(newUserData),
+            })
+                .then(res => res.json())
+                .then(response => {
+
+                    alert('Success: sign_up', response)
+                    EmailSend(email, ssn);
+                })
+                .catch(error => {
+                    alert(error)
+                })
+
+        }
+    </script>
+</head>
+
+<body>
+    <div class="main">
+        <form class="container signupContainer">
+            <div class="mb-4 signupHeaderContainer">
+                <h1 style="color: black;">Create New Customer Account</h1>
+            </div>
+            <div>
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label">SSN</label>
+                    <input type="text" class="form-control signupInput" id="ssn" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label">name</label>
+                    <input type="text" class="form-control signupInput" id="name" aria-describedby="emailHelp">
+                </div>
+                <div class="mb-3 ">
+                    <label for="exampleInputEmail1" class="form-label">Email</label>
+                    <input type="text" id="email" class="form-control signupInput" aria-describedby="emailHelp">
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control signupInput">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">PhoneNumber</label>
+                <input type="text" class="form-control signupInput" id="phonenumber">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">PermanentAddress</label>
+                <input type="text" class="form-control signupInput" id="address" aria-describedby="emailHelp">
+            </div>
+            <div>
+                <input type="radio" id="male" name="gender" value="male" />
+                <label for="male">male</label>
+
+                <input type="radio" id="female" name="gender" value="female" />
+                <label for="female">female</label><br>
+            </div>
+            <div>
+                <button style="margin: 15px 0px;" type="submit" class="btn btn-light signupButton"
+                    onclick="sign_up()">Sign Up</button>
+                <a href="login.html" class="SignLink">Already have account? Sign in now</a><br>
+                <a href="HomePage.html" class="SignLink">Or, Return to Home Page</a>
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+        crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/2dd8fb4b0b.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../css/companyHomePage.css">
+    <title class="companyName"></title>
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+</head>
+
+<body onload="getCompanyInfo()">
+    <div class="SignMainBackground">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="HomePage.html"><img src="../images/WaslniLogo.png" alt="Logo"
+                            width="30" height="30" class="d-inline-block align-text-top"> Waslni</a>
+                    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                        <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="companyHomePage.html">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" aria-current="page" href="showrequest.html">Show New Requests</a>
+                            </li>
+                            <li class="nav-item">
+                                <button class="btn nav-link" onclick="showOrders()">Current Orders</button>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="https://www.google.com/maps" target="_blank">Maps</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                                    aria-expanded="false">
+                                    My Offers
+                                </a>
+                                <ul class="dropdown-menu">
+                                    <li><button class="dropdown-item" onclick="showOffers()">Show my offers</button>
+                                    </li>
+                                    <!-- from here we can edit/delete an offer when showing all offers table -->
+                                    <li><button class="dropdown-item" data-bs-target="#exampleModalToggle"
+                                            data-bs-toggle="modal">Create new offer</button></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- The commented Below component is postponded and because it's not active yet-->
+                    <!-- <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search an order"
+                            aria-label="Search">
+                        <button class="btn btn-outline-danger" type="submit">Search</button>
+                    </form> -->
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false"
+                        aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+        <div class="container CompanyContainer mt-5 ms-5">
+            <div class="thumbnailContainer">
+                <h2 class="mb-3 companyName" id="companyName"></h2>
+                <img src="../images/profile picture.webp" class="rounded-circle img-thumbnail mb-3"
+                    style="width: 150px; height: 150px;" alt="Company Picture">
+            </div>
+            <div>
+                <h1 class="aboutCompany SignHeaderContainer">New way of your modern delivery</h1>
+            </div>
+            <div class="list-group CompanyInfoList">
+                <button type="button" class="list-group-item list-group-item-action" data-bs-target="#companyInfo"
+                    data-bs-toggle="modal">Company Informations</button>
+                <a type="button" class="list-group-item list-group-item-action" href="login.html">Log out</a>
+            </div>
+            <div class="container trackContainer">
+                <!-- The commented Below component is postponded and because it's not active yet-->
+                <!-- <form class="d-flex trackSearchForm" role="search">
+                    <input class="form-control me-2 trackSearchBar" type="search" placeholder="Track package now!"
+                        aria-label="Search">
+                    <button class="btn btn-danger trackSearchButton" type="submit">Track now</button>
+                </form> -->
+            </div>
+            <div class="container ordersContainer" style="height: 500px; overflow: auto">
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">Client Name</th>
+                            <th scope="col">Start Point</th>
+                            <th scope="col">End Point</th>
+                            <th scope="col">Street</th>
+                            <th scope="col">Postal Code</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Request Date</th>
+                            <th scope="col">State</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="ordersTable">
+
+                    </tbody>
+                </table>
+            </div>
+            <div class="container offersContainer" style="height: 500px; overflow: auto">
+                <table class="table table-light">
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Start City</th>
+                            <th scope="col">End City</th>
+                            <th scope="col">Vehicle Size</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Overhead fast delivery</th>
+                            <th scope="col">Fast delivery time</th>
+                            <th scope="col">Overhead village delivery</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-group-divider" id="offersTable">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
+        tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="exampleModalLabel" style="margin-right: auto; margin-left: auto;">
+                        <i class="fa-solid fa-receipt"></i>
+                        Create New Offer
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <form action="">
+                    <div class="modal-body">
+                        <div class="mb-3">
+                            <label for="start-city" class="col-form-label"><i class="fa-solid fa-plane-departure"></i>
+                                Start
+                                City</label>
+                            <select required type="text" class="form-select form-control" id="start-city">
+                                <option value="Nablus">Nablus</option>
+                                <option value="Jenin">Jenin</option>
+                                <option value="Ramallah">Ramallah</option>
+                                <option value="Tulkarem">Tulkarem</option>
+                                <option value="Qulquilia">Qulquilia</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="end-city" class="col-form-label"><i class="fa-solid fa-plane-arrival"></i> End
+                                City</label>
+                            <select required type="text" class="form-select form-control" id="end-city">
+                                <option value="Jenin">Jenin</option>
+                                <option value="Nablus">Nablus</option>
+                                <option value="Ramallah">Ramallah</option>
+                                <option value="Tulkarem">Tulkarem</option>
+                                <option value="Qulquilia">Qulquilia</option>
+                            </select>
+                        </div>
+                        <div class="mb-3">
+                            <label for="order-status" class="col-form-label dropdown-toggle" data-bs-toggle="dropdown"
+                                aria-expanded="false" style="cursor: pointer;"><i class="fa-solid fa-car"></i> Vehicle
+                                Size: (click to
+                                choose <i class="fa-solid fa-hand-pointer"></i>)</label>
+                            <ul class="dropdown-menu dropdown-menu-end">
+                                <li onclick="smallSize()"><button class="dropdown-item" type="button"><i
+                                            class="fa-solid fa-car-side"></i>
+                                        Small</button></li>
+                                <li onclick="meduimSize()"><button class="dropdown-item" type="button"><i
+                                            class="fa-solid fa-truck-pickup"></i>
+                                        Medium</button></li>
+                                <li onclick="bigSize()"><button class="dropdown-item" type="button"><i
+                                            class="fa-solid fa-truck-moving"></i>
+                                        Big</button></li>
+                            </ul>
+                        </div>
+                        <div class="mb-3">
+                            <label for="standard-price" class="col-form-label"><i class="fa-solid fa-dollar-sign"></i>
+                                Standard Price</label>
+                            <input required type="number" min="0" class="form-control" id="standard-price">
+                        </div>
+                        <div class="mb-3">
+                            <label for="overhead-fast" class="col-form-label"><i
+                                    class="fa-solid fa-hand-holding-dollar"></i> Overhead for Fast delivery</label>
+                            <input required type="number" min="0" class="form-control" id="overhead-fast">
+                        </div>
+                        <div class="mb-3">
+                            <label for="overhead-village" class="col-form-label"><i
+                                    class="fa-solid fa-magnifying-glass-dollar"></i> Overhead for Village
+                                delivery</label>
+                            <input required type="number" min="0" class="form-control" id="overhead-village">
+                        </div>
+                        <div class="mb-3">
+                            <label for="time-for-fast-delivery" class="col-form-label"><i
+                                    class="fa-regular fa-hourglass-half"></i> Time for Fast delivery</label>
+                            <input required type="number" min="0" class="form-control" id="time-for-fast-delivery">
+                        </div>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal"
+                            style="margin-right: auto;">Cancel</button>
+                        <button type="submit" class="btn btn-success" onclick="createOffer()">Create Offer</button>
+                    </div>
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="companyInfo" aria-hidden="true" aria-labelledby="companyInfo" tabindex="-1">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-3" id="exampleModalLabel" style="margin-right: auto; margin-left: auto;">
+                        <i class="fa-solid fa-receipt"></i>
+                        Company Informations
+                    </h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                        style="margin-left: 0;"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="mb-3">
+                        <label for="company-name" class="col-form-label"><i class="fa-solid fa-signature"></i> Company
+                            Name:</label>
+                        <input type="text" class="form-control" id="company-name" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="company-phone-number" class="col-form-label"><i class="fa-solid fa-phone"></i>
+                            Company
+                            Phone Number:</label>
+                        <input type="text" class="form-control" id="company-phone-number" disabled>
+                    </div>
+                    <div class="mb-3">
+                        <label for="company-email-address" class="col-form-label"><i class="fa-solid fa-at"></i> Company
+                            Email Address:</label>
+                        <input type="text" class="form-control" id="company-email-address" disabled>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../javascript/companyHomePage/companyHomePage.js"></script>
+    <script src="../javascript/companyHomePage/companyHomePage_Integration.js"></script>
+</body>
+
+</html>

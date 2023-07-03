@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+  .make_your_order{
+    position: absolute ;
+    left: 40px;
+    top: 60px;
+    color:rgb(156, 12, 12);
+    font-family: 'Courgette', cursive;
+    font-size: 50px;
+    
+   }
+
+   .oval{
+   border:3px solid rgb(177, 37, 37);
+   height: 450px;
+   width: 620px;
+   background-color: #d1d1d3;
+   border-radius: 7px;
+   text-align: right;
+   position: absolute ;
+   right: 200px;
+   top:210px;
+
+  }
+  .box{
+    position: absolute;
+    left:50px;
+  }
+  .start{
+    position: relative;  
+    font-size: 20px;
+    margin-top: 150px;
+    color:  rgb(177, 37, 37);
+   
+  }
+
+  .end{
+    position: relative;    
+    margin-top: 20px;
+    font-size: 20px;  
+    color:  rgb(177, 37, 37);
+
+  }
+  .textField{
+    margin-top:10px;
+    margin-left: 80px;
+  }
+  
+  .list{
+    position: relative;
+    left: 10px;
+    top:7px;
+    color:black;
+    background-color: #beb8b8;
+    border-radius: 15px;
+    width:115px;
+    height: 30px;
+    border: 3px solid rgb(156, 12, 12);
+    font-size: 15px;
+    text-align: center;
+    
+  }
+  .time{
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    color:rgb(156, 12, 12);
+    margin-top: 10px;
+    margin-left: 35px;
+    font-size: 20px;
+    border-radius: 5px;
+  }
+  #time{
+    font-family: 'Poppins', sans-serif;
+    color:rgb(122, 111, 111);
+    
+  }
+  .btnn{
+    margin-top: 30px;
+    margin-left: 70px; 
+    font-family: 'Courgette', cursive;
+  }
+
+  .butn{
+    background-color:rgb(156, 12, 12);
+    size: 50px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    padding: 14px 40px;
+    border-radius: 25px;
+    text-align: center;
+    border: 3px solid  #c2bcbc;
+    color:#beb8b8;
+   
+    
+  }
+
+  .lname{
+    background-color: #d1d1d3;
+    border-color: rgb(156, 12, 12);
+    border:3px solid rgb(156, 12, 12);
+    border-radius: 15px;
+    height: 25px;
+    width:200px;
+    margin-top: 10px;
+  }
+
+  .company{
+    position: relative;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    color: rgb(156, 12, 12);
+    margin-right: 220px;
+    top: 0px;
+  }
+
+  .startPt{
+    position: relative;
+    top:8px;
+    left: -8;
+    font-size: 20px;
+    color:rgb(177, 37, 37);
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .endPt{
+    position: relative;
+    top:8px;
+    left: -8;
+    font-size: 20px;
+    color:rgb(177, 37, 37);
+    font-family: 'Poppins', sans-serif;
+   }
+  .list:hover{
+    color: rgb(156, 12, 12);
+  }
+
+  
+
+  .clender{
+    border-radius: 5px;
+    border-color:rgb(177, 37, 37) ;
+    background-color: #d1d1d3;
+    width:150px;
+
+  }
+
+  .tablee{
+    size:100%;
+    margin-top: 50px;
+    margin-right: 70px;
+    font-size: 20px;
+    color: rgb(62, 58, 58);
+  }
+
+  .shows{
+    background-color:rgb(156, 12, 12);
+    size: 70px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    margin-top: 15px;
+    margin-right: 250px;
+    border-radius: 25px;
+    text-align: center;
+    border: 3px solid  #c2bcbc;
+    color:#beb8b8;
+  }
+
+  #p1 { text-indent: 100px; }
+
+  .filter {
+    position: absolute;
+    bottom: -23px;
+    text-align: start;
+  }
+
+  .filter-list {
+    width: 190px;
+    position: absolute;
+    left: 50px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .filter-btn {
+    font-family: 'Courgette', cursive;
+    background-color:rgb(156, 12, 12);
+    border: 3px solid  #c2bcbc;
+    border-radius: 25px;
+    position: relative;
+    color:#beb8b8;
+  }
+
+  .filter-btn:hover, .filter-btn:active {
+    background-color: rgb(156, 12, 12);
+    border: 3px solid  #c2bcbc;
+    color:#beb8b8;
+  }
+
+  .ratedFilter {
+    bottom: -50px;
+  }
+
+  .ratedFilter > .filter-list {
+    left: 150px;
+  }
+
+  .priceFilterTable, .extraServiceFilterTable, .rateFilterTable {
+    display: none;
+    width: max-content;
+    padding-left: 2.3rem;
+    width: 620px;
+}
+
+.priceFilterTable {
+  display: block;
+}
+
+.table {
+    margin-bottom: 0;
+    text-align: start;
+}
+
+#standardFilter {
+  width: fit-content;
+}

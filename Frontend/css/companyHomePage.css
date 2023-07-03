@@ -1,0 +1,60 @@
+
+.SignMainBackground {
+    background-image: url(../images/CompanyHomeBG.webp);
+}
+
+.CompanyContainer {
+    width: fit-content;
+    display: grid;
+    grid-template-columns: repeat(2, 0.7fr);
+}
+
+.companyName {
+    color: rgb(220, 53, 69);
+}
+
+.CompanyInfoList {
+    width: 18rem;
+    justify-self: center;
+}
+
+.thumbnailContainer {
+    text-align: center;
+}
+
+.trackContainer {
+    width: 46rem;
+}
+
+.trackSearchForm {
+    width: 45.5rem;
+    height: 3.2rem;
+    margin-left: 3rem;
+    margin-top: 2rem;
+}
+
+.trackSearchBar, .trackSearchButton {
+    font-size: larger;
+}
+
+.trackSearchButton {
+    width: 10rem;
+    font-weight: 500;
+}
+
+.aboutCompany {
+    margin-left: 3rem;
+    padding: 0.7rem;
+    font-size: 4.25rem;
+    color: rgb(220, 53, 69);
+}
+
+.ordersContainer, .offersContainer {
+    display: none;
+    width: max-content;
+    padding-left: 2.3rem;
+}
+
+.table {
+    margin-bottom: 0;
+}

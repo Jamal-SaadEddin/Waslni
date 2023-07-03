@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+
+  
+
+.myTable{
+  border:3px solid rgb(74, 66, 66);
+    height:300px;
+    width: 1200px;
+     background-color: transparent;
+    border-radius: 7px;
+    /* text-align: start; */
+    position: absolute ;
+    left:150px;
+    top:200px;
+}
+.company{
+  font-family: 'Courgette', cursive;
+  font-size: 40px;
+  color: rgb(156, 12, 12);
+  position: absolute;
+  top: 140px;
+  left:250px;
+}
+.table{
+  color: rgb(156, 12, 12);
+
+}
+/* #p1 { text-indent: 50px; */
+/* } */
+
+
+
+
+
+ 
+   
+ 
+
+ 
+
+  

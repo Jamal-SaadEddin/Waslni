@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/2dd8fb4b0b.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/companyHomePage.css">
+  <link rel="stylesheet" href="../css/company_review.css">
+  <title>Company Review</title>
+  <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+  <style>
+    body {
+      background-image: url('../../Frontend/images/Registration.webp');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: 100% 100%;
+    }
+
+  </style>
+</head>
+
+<body>
+
+
+  <div class="circle">
+    <div class="image">
+      <img src="../images/companyreview/image.webp">
+    </div>
+  </div>
+
+
+  <nav class="navbar navbar-expand-lg ms-3">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="HomePage.html"><img src="../images/WaslniLogo.png" alt="Logo" width="30" height="30"
+          class="d-inline-block align-text-top"> Waslni</a>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav nav__links">
+          <li><a href="ManagerHomePage.html">HOME</a></li>
+          <li><a href="company_review.html">COMPANY REVIEW</a></li>
+          <li><a href="signup.html">LOG OUT</a></li>
+        </ul>
+      </div>
+      <!-- The commented Below component is postponded and because it's not active yet-->
+      <!-- <form class="d-flex" role="search">
+              <input class="form-control me-2" type="search" placeholder="Search an order"
+                  aria-label="Search">
+              <button class="btn btn-outline-danger" type="submit">Search</button>
+          </form> -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+
+
+
+  <script src="../javascript/companyHomePage/companyHomePage.js"></script>
+
+  <div id="table"></div>
+
+
+
+  <script src="../javascript/companyRivew/companyRivew.js"></script>
+  <script>
+    async function detailsFunction(id) {
+      var id1 = id;
+      var offersRows;
+      const details = await getDetails(id);
+      if (details === undefined)
+        offersRows = `This company didn't enter any offers! <i class="fa-regular fa-face-frown fa-shake"></i>`;
+      else
+        offersRows = details
+          .map(
+            (offer) =>
+              `<tr>
+        <td>
+         ${offer.id}
+        </td>
+        <td>
+         ${offer.startCity}
+        </td>
+        <td>
+         ${offer.endCity}
+        </td>
+        <td>
+         ${offer.vehicleSize}
+        </td>
+        <td>
+         $${offer.standardPrice}
+        </td>
+        <td>
+         $${offer.overheadPriceExpress}
+        </td>
+        <td>
+         ${offer.timeDeliverExpress}
+        </td>
+        <td>
+         $${offer.overheadPriceVillage}
+        </td>
+    </tr>`
+          )
+          .join("");
+      localStorage.clear();
+      localStorage.setItem('offersRows', offersRows);
+      window.open("details.html", "", "resizable,width=800,height=600");
+      window.resizable = 0;
+      window.frames;
+    }
+    async function getDetails(id) {
+      var requestOptions = {
+        method: 'GET',
+        redirect: 'follow'
+      };
+
+      let data;
+      await fetch(`https://waslni.azurewebsites.net/CompanyOffers/${id}`, requestOptions)
+        .then(response => response.json())
+        .then(result => data = result.CompanyOffers)
+        .catch(error => console.log('error', error));
+      return data;
+    }
+    async function confirmCompanyStatus(id, status) {
+      var requestOptions = {
+        method: 'PUT',
+        redirect: 'follow'
+      };
+
+      await fetch(`https://waslni.azurewebsites.net/companyReview/${id}/${status}`, requestOptions)
+        .then(response => response.text())
+        .then(result => console.log(result))
+        .catch(error => console.log('error', error));
+      location.reload();
+    }
+  </script>
+
+</body>
+
+</html>

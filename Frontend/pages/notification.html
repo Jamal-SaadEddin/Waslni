@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Waslni - Notification</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/notification.css">
+    <link rel="icon" href="../images/WaslniLogo.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <button type="submit" class="btn" onclick="openPopup()">submit</button>
+        <div class="popup" id="popup">
+            <img src="../images/tick1.webp">
+            <h2>Thank you!</h2>
+            <p>Your order is successfully recorded.</p>
+            <p>The delivery company will contact you soon...</p>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+    </div>
+
+    <script>
+        let popup = document.getElementById("popup");
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+    </script>
+</body>
+
+</html>

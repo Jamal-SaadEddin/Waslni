@@ -1,0 +1,10 @@
+
+.SignMainBackground {
+    background-image: url(../images/login.webp);
+}
+
+.SignContainer {
+    width: 25%;
+    top: 25%;
+    left: 25%;
+}

@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+ body{
+  background-color: #d8d4d4;
+ }
+  .table1{
+    size:100%;
+   /* margin-top: 50px;
+    margin-right: 70px;*/
+    font-size: 11px;
+    color: rgb(62, 58, 58);
+    border-collapse: separate;
+    border-spacing: 20px;
+  }
+ .oval1{
+  border:3px solid #d01414;
+  height: 500px;
+  width: 700px;
+  background-color: rgb(236, 225, 225);
+  border-radius: 7px;
+  text-align: right;
+  position: absolute ;
+  top:50px;
+  left: 40px;
+ 
+ }
+ #p1 { text-indent:10px; }
+ #mytable1{
+width: 50px;
+ }
+ .mytbl1{
+  width: 700px;
+ }
+
+
+
+

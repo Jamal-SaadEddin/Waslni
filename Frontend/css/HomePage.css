@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body {
+    background-image: url('/image/');
+  }
+
+  .logo{
+    position: absolute ;
+    left:  55px;
+    top:27px;
+    color:#c50f0f;
+    font-family: 'Courgette', cursive;
+    font-size: 25px;
+  }
+  
+  
+ .image{
+    position: absolute;
+    top:30px;
+   left: 30px;
+   width: 30;
+   height: 30;
+   }
+
+   h1{
+    font-size: 50px;
+    font-weight: bold;
+    color: #232d46;
+    position: absolute;
+    top:100px;
+    left:50px;
+
+   }
+
+   h2{
+    font-size: 80px;
+    font-weight: bold;
+    color: #d13123;
+    position: absolute;
+    top:130px;
+    left:40px;
+   }
+
+   .sign{
+    background-color: transparent;
+    font-size: 40px;
+    font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    top:470px;
+    right: 700px;;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px solid  #f0eeee;
+    color:#d13123;
+   }
+
+   .log{
+    background-color: transparent;
+    font-size: 45px;
+    font-family: "Times New Roman", Times, serif;
+    position: absolute;
+    top:550px;
+    right: 705px;;
+    border-radius: 10px;
+    text-align: center;
+    border: 3px solid  #ffffff;
+    color:#d13123;
+   }
+  h3{
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top:330px;
+    left:50px;
+  }
+
+  h4{
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffffff;
+    position: absolute;
+    top:350px;
+    left:50px;
+  }
+  

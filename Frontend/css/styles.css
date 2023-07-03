@@ -1,0 +1,61 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+body, html {
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+}
+
+.SignMainBackground {
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.SignContainer {
+    padding: 3%;
+    padding-top: 2%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.1);
+    border-radius: 2rem;
+    box-shadow: 0px 0px 30px 5px;
+    color: aliceblue;
+}
+
+.SignHeaderContainer {
+    text-align: center;
+    font-family: 'Courgette', cursive;
+}
+
+.SignLink {
+    color: rgb(50, 157, 250);
+    text-decoration: none;
+}
+
+.SignButton {
+    width: 100%;
+    letter-spacing: 1px;
+    font-size: larger;
+}
+
+.SignButton:hover {
+    background-color: brown;
+    color: aliceblue;
+    font-weight: bolder;
+}
+
+.SignInput:focus {
+    box-shadow: 0 0 0 2px #D3D3D3;
+    border-color: brown;
+    outline-width: 0px;
+}
+
+.cursor-default {
+    cursor: default;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}

@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courgette&display=swap');
+
+ .image{
+  position: absolute;
+  top:60px;
+  width: 300px;
+  right: -40px;;
+ }
+
+ li,a,button{
+  font-weight: 500;
+  font-size: 16px;
+  color: #b60023;
+  text-decoration: none;
+}
+
+.nav__links{
+  list-style: none;
+}
+
+.nav__links li{
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a{
+  transition: all 0.3s ease 0s;
+}
+
+.nav__links li a:hover{
+  color: #ff2229;
+}
+
+button{
+  padding: 9px 25px;
+  background-color: #ff2229;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease 0s;
+}
+
+button:hover{
+  background-color: #b60023;
+}
+ a.logo{
+  position: absolute;
+  top:50px;
+  left:80px;
+ }
+
+
+ .circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+ .circle{
+  
+  size: 100%;
+  width:380px;
+  background-color:#dbd4d4;
+  border-radius: 150px;
+  text-align: right;
+  position: absolute ;
+  right: 70px;
+  top:65px;
+ }
+ 
+  .logo{
+    position: absolute ;
+    left:  130px;
+    top:100px;
+    color:#d01414;
+    font-family: 'Courgette', cursive;
+    font-size: 30px;
+  }
+  #table{
+   height: 200px;
+   width: 500px;
+   /* margin-top: 50px;*/
+    margin-right: 10px;
+    font-size: 12px;
+    color: rgb(62, 58, 58);
+    border-spacing: 10px;
+
+  }
+ .mytbl{
+  border:3px solid #d01414;
+  size: 100%;
+  background-color: #dbd4d4;
+  border-radius: 7px;
+  text-align: right;
+  position: absolute ;
+  top:100px;
+ }
+ #p1 { 
+  text-indent: 75px;
+}
+
+
+ #tst{
+background-color:rgb(156, 12, 12);
+    size: 15px;
+    font-family: 'Courgette', cursive;
+    font-size: 20px;
+    float: right;
+   /* margin-top: 380px;
+    margin-right: 190px;*/
+    border-radius: 25px;
+    text-align: center;
+    border: 3px solid  #c2bcbc;
+    color:#beb8b8;
+ }
+ .selected {
+  background-color: brown;
+  color: brown;
+}
+th {
+ 
+  background-color: #dbd4d4;
+  font-weight: bold;
+  max-width: fit-content;
+ 
+
+}
+tr {
+  border: 1px solid rgb(236, 225, 225);
+  background-color: #eee;
+  font-weight: bold;
+  max-width: fit-content;
+ 
+
+}
+
+.mytbl{
+  width:500px;
+}
+#col{
+  text-indent: 100px;
+
+}
+
+td#col3{
+  font-size:12px;
+  text-align: left;
+  padding-left: 30px;
+
+}
+#mytable.mytbl{
+  width: 600px;
+}
