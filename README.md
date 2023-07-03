@@ -1,14 +1,15 @@
 # Waslni
 
+
+## Description
+
+Waslni is a delivery system that connects delivery companies to people who want to deliver their products between cities in Palestine. This repository contains the front-end files for the Waslni project. The front-end development was part of a larger project, and this repository specifically focuses on the user interface and client-side functionality.
+
 ## Project Link
 
 https://www.youtube.com/watch?v=oXAMvqOHpPM
 ### Another link: 
 https://drive.google.com/file/d/1l5hk2ctpEnpRb8mkqye6WHRj0FYseLCD/view?usp=drive_link
-
-## Description
-
-Waslni is a delivery system that connects delivery companies to people who want to deliver their products between cities in Palestine. This repository contains the front-end files for the Waslni project. The front-end development was part of a larger project, and this repository specifically focuses on the user interface and client-side functionality.
 
 ## Technologies Used
 
