@@ -29,3 +29,5 @@ I would like to extend my gratitude to the following individuals for their contr
 - Ayman Saleem (Trainer)
 
 Thank you for your guidance and assistance throughout the project.
+
+This project was developed as a part of the training course at ASAL company.
