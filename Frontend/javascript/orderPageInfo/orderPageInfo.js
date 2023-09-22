@@ -4,9 +4,27 @@ var clientSSN;
 
 async function showOrder(orderId) {
   orderID = orderId;
-  const order = await getOrder(orderID);
+  let order = await getOrder(orderID);
+  order = {
+    ClientSSN: 1001,
+    id: 75,
+    Start_Point_Location: "Nablus",
+    End_Point_Location: "Jenin",
+    Street: "AlQuds",
+    postalCode: "P500484",
+    OrderPrice: "50",
+    dateOfRequest: "15/9/2023",
+    Status: "Pending",
+    Size: "Meduim",
+    Description: "Macbook Pro",
+  };
   clientSSN = order.ClientSSN;
-  const client = await getClient(clientSSN);
+  let client = await getClient(clientSSN);
+  client = {
+    Name: "Jamal SaadEddin",
+    PhoneNumber: "+972599098598",
+    Email: "jamalsaadeddin27@gmail.com",
+  };
 
   document.getElementById("order-client-name").value = client.Name;
   document.getElementById("order-id").value = order.id;

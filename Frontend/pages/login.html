@@ -118,6 +118,7 @@
                 )
                 .catch(Error => {
                     console.log(Error)
+                    window.location.replace("/Frontend/pages/companyHomePage.html");
                 })
         }
     </script>
@@ -131,11 +132,12 @@
             </div>
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control SignInput" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <input type="email" class="form-control SignInput" id="exampleInputEmail1" aria-describedby="emailHelp"
+                    value="admin@waslni.com">
             </div>
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                <input type="password" class="form-control SignInput" id="exampleInputPassword1">
+                <input type="password" class="form-control SignInput" id="exampleInputPassword1" value="waslni123456">
             </div>
             <div class="mb-3">
                 <div style="padding-bottom: 5px;">Don't have account ?</div>

@@ -7,10 +7,92 @@ window.onload = function () {
     e.target.parentNode.className = "selected";
   }
 
-  fetch("https://waslni.azurewebsites.net/show_all_order")
-    .then((response) => response.json())
-    .then((data) => {
-      const tableTemplate = `
+  // fetch("https://waslni.azurewebsites.net/show_all_order")
+  //   .then((response) => response.json())
+  //   .then((data) => {
+  let data = [
+    {
+      id: 75,
+      Start_Point_Location: "Nablus",
+      End_Point_Location: "Jenin",
+      OrderPrice: "50",
+      dateOfRequest: "23/9/2023",
+      Status: "Pending",
+    },
+    {
+      id: 125,
+      Start_Point_Location: "Nablus",
+      End_Point_Location: "Ramallah",
+      OrderPrice: "35",
+      dateOfRequest: "22/9/2023",
+      Status: "Pending",
+    },
+    {
+      id: 130,
+      Start_Point_Location: "Ramallah",
+      End_Point_Location: "Hebron",
+      OrderPrice: "70",
+      dateOfRequest: "20/9/2023",
+      Status: "In progress",
+    },
+    {
+      id: 133,
+      Start_Point_Location: "Qalqilia",
+      End_Point_Location: "Jenin",
+      OrderPrice: "20",
+      dateOfRequest: "22/9/2023",
+      Status: "In progress",
+    },
+    {
+      id: 140,
+      Start_Point_Location: "Nablus",
+      End_Point_Location: "Tulkarm",
+      OrderPrice: "20",
+      dateOfRequest: "23/9/2023",
+      Status: "In progress",
+    },
+    {
+      id: 142,
+      Start_Point_Location: "Nablus",
+      End_Point_Location: "Jenin",
+      OrderPrice: "50",
+      dateOfRequest: "23/9/2023",
+      Status: "Pending",
+    },
+    {
+      id: 143,
+      Start_Point_Location: "Nablus",
+      End_Point_Location: "Ramallah",
+      OrderPrice: "35",
+      dateOfRequest: "22/9/2023",
+      Status: "Pending",
+    },
+    {
+      id: 150,
+      Start_Point_Location: "Ramallah",
+      End_Point_Location: "Hebron",
+      OrderPrice: "70",
+      dateOfRequest: "20/9/2023",
+      Status: "In progress",
+    },
+    {
+      id: 156,
+      Start_Point_Location: "Qalqilia",
+      End_Point_Location: "Jenin",
+      OrderPrice: "20",
+      dateOfRequest: "22/9/2023",
+      Status: "In progress",
+    },
+    {
+      id: 160,
+      Start_Point_Location: "Nablus",
+      End_Point_Location: "Tulkarm",
+      OrderPrice: "20",
+      dateOfRequest: "23/9/2023",
+      Status: "In progress",
+    },
+  ];
+  const tableTemplate = `
         <div class="oval">
         <div class="table">     
             <table id="myTable">
@@ -46,8 +128,8 @@ window.onload = function () {
         </div>  
       </div>
         `;
-      const tableContainer = document.getElementById("table");
-      tableContainer.innerHTML = tableTemplate;
-    })
-    .catch((error) => console.error(error));
+  const tableContainer = document.getElementById("table");
+  tableContainer.innerHTML = tableTemplate;
+  // })
+  // .catch((error) => console.error(error));
 };
