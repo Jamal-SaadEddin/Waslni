@@ -7,9 +7,10 @@ Waslni is a delivery system that connects delivery companies to people who want 
 
 ## Project Link
 
-https://www.youtube.com/watch?v=oXAMvqOHpPM
-### Another link: 
-https://drive.google.com/file/d/1l5hk2ctpEnpRb8mkqye6WHRj0FYseLCD/view?usp=drive_link
+https://jamal-saadeddin.github.io/Waslni/
+### Demo Video: 
+[Youtube](https://www.youtube.com/watch?v=oXAMvqOHpPM) / 
+[Drive](https://drive.google.com/file/d/1l5hk2ctpEnpRb8mkqye6WHRj0FYseLCD/view?usp=drive_link)
 
 ## Technologies Used
 
